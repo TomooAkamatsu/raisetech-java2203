@@ -106,7 +106,7 @@ public class Practice06 {
 				}
 			}
 
-//			ArrayList.sizeを用いてランキング番号を表示
+//			ArrayList.size()を用いてランキング番号を表示
 			if (prefRankingList.size() == 1) {
 				System.out.println(prefRankingList.size() + "位です");
 			} else if ( /*点数が同じで同率の場合は早い方の位を表示するように処理*/
