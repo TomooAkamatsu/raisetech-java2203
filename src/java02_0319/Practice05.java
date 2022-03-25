@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Practice06 {
+public class Practice05 {
 
 	public static void main(String[] args) {
 
