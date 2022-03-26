@@ -15,7 +15,7 @@ public class Main {
 
 		System.out.println("----2, for文を用いて1～10まで足した結果の表示----");
 		practice02(); /* for文を用いて */
-		practice02_oneLine(); /* IntStreamを用いて1行で */
+		practice02OneLine(); /* IntStreamを用いて1行で */
 
 		System.out.println("----3, 3年後の今日は何曜日？----");
 		practice03();
@@ -40,7 +40,7 @@ public class Main {
 		System.out.println("1から10の合計は" + total);
 	}
 
-	public static void practice02_oneLine() {
+	public static void practice02OneLine() {
 		System.out.println("1から10の合計は" + IntStream.rangeClosed(1, 10).sum());
 	}
 
@@ -53,17 +53,17 @@ public class Main {
 
 	public static void practice04(int i) {
 		if (i == 0 || i == 1) {
-			System.out.println(practice04_01(i));
+			System.out.println(practice0401(i));
 		} else {
 			System.out.println("0か1を入力してください");
 		}
 	}
 
-	public static boolean practice04_01(int i) {
+	public static boolean practice0401(int i) {
 		if (i == 0) {
 			return false;
 		}
 		return true;
 	}
-
+	
 }
