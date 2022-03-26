@@ -64,7 +64,7 @@ public class Practice05 {
 
 //		valueを降順にソートしてLinkedHashMapに格納
 		Stream<Map.Entry<String, Double>> sortedStream = prefCharm.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue()));
-		LinkedHashMap<String, Double> sortedPrefCharm = sortedStream.collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue(), (u, v) -> v, LinkedHashMap::new));
+		Map<String, Double> sortedPrefCharm = sortedStream.collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue(), (u, v) -> v, LinkedHashMap::new));
 		
 //	   ---------------------------------------------------------
 		/*
@@ -118,7 +118,7 @@ public class Practice05 {
 			}
 
 		} else { /*入力文字が正しく無い場合*/
-			System.out.println("入力された文字が正しくおありません");
+			System.out.println("入力された文字が正しくありません");
 		}
 
 //		------------------------------------------------------------------------------
