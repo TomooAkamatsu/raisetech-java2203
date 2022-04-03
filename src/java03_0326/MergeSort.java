@@ -40,44 +40,44 @@ public class MergeSort {
 	 * ③〜　(最上層まで繰り返し)
 	 */
 		public static void merge(int[] intArray, int left, int mid, int right) {
-			int n1 = mid - left + 1; // left ~ midの長さ
-			int n2 = right - mid; // mid＋1 ~ rightの長さ
+			int leftLength = mid - left + 1; // left ~ midの長さ
+			int rightLength = right - mid; // mid＋1 ~ rightの長さ
 
-			int[] n1Array = new int[n1]; // intArray[left ~ mid] を格納する配列の宣言
-			int[] n2Array = new int[n2]; // intArray[mid+1 ~ right] を格納する配列の宣言
+			int[] leftArray = new int[leftLength]; // intArray[left ~ mid] を格納する配列の宣言
+			int[] rightArray = new int[rightLength]; // intArray[mid+1 ~ right] を格納する配列の宣言
 
-			for (int i = 0; i < n1; i++) { // intArray[left ~ mid] をn1Arrayに格納
-				n1Array[i] = intArray[left + i];
+			for (int i = 0; i < leftLength; i++) { // intArray[left ~ mid] をleftArrayに格納
+				leftArray[i] = intArray[left + i];
 			}
-			for (int i = 0; i < n2; i++) { // intArray[mid+1 ~ right] をn2Arrayに格納
-				n2Array[i] = intArray[mid + 1 + i];
+			for (int i = 0; i < rightLength; i++) { // intArray[mid+1 ~ right] をrightArrayに格納
+				rightArray[i] = intArray[mid + 1 + i];
 			}
 
-			int n1Count = 0; 
-			int n2Count = 0;
-			int sortPoint = left; // 格納する毎にleftからrightまで1ずつ加算
+			int leftCount = 0; 
+			int rightCount = 0;
+			int sortPoint = left; // intArrayへの格納場所を示す。leftからrightまで1ずつ加算
 
-			while (n1Count < n1 && n2Count < n2) { // n1Arrayとn2Arrayの先頭を比較して小さい方をintArrayに格納
-				if (n1Array[n1Count] <= n2Array[n2Count]) {
-					intArray[sortPoint] = n1Array[n1Count];
-					n1Count++;
+			while (leftCount < leftLength && rightCount < rightLength) { // leftArrayとrightArrayの先頭を比較して小さい方をintArrayに格納
+				if (leftArray[leftCount] <= rightArray[rightCount]) {
+					intArray[sortPoint] = leftArray[leftCount];
+					leftCount++;
 				} else {
-					intArray[sortPoint] = n2Array[n2Count];
-					n2Count++;
+					intArray[sortPoint] = rightArray[rightCount];
+					rightCount++;
 				}
 				sortPoint++;
 			}
 
-			while (n1Count < n1) { // n2Arrayの格納が先に終わった場合
-				intArray[sortPoint] = n1Array[n1Count];
-				n1Count++;
+			while (leftCount < leftLength) { // rightArrayの格納が先に終わった場合
+				intArray[sortPoint] = leftArray[leftCount];
+				leftCount++;
 				sortPoint++;
 			}
 
-			while (n2Count < n2) { // n1Arrayの格納が先に終わった場合
-				intArray[sortPoint] = n2Array[n2Count];
+			while (rightCount < rightLength) { // leftArrayの格納が先に終わった場合
+				intArray[sortPoint] = rightArray[rightCount];
 				sortPoint++;
-				n2Count++;
+				rightCount++;
 			}
 			
 //			確認のため処理を一つずつ出力
